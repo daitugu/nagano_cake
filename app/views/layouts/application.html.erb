@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/dd1b77aad7.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+      <% if customer_signed_in? %>
+      <li>
+    <%= link_to '投稿フォーム', root_path  %>
+      </li>
+      <li>
+        <%=link_to  'マイページ',root_path %>
+      </li>
+      <li>
+        <%=link_to  "ログアウト", root_path  %>
+      </li>
+    <% else %>
+      <li>
+        <%=link_to  "新規登録",root_path   %>
+      </li>
+      <li>
+        <%=link_to  "ログイン",root_path  %>
+      </li>
+    <% end %>
     <%= yield %>
   </body>
 </html>
