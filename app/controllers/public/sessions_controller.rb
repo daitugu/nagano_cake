@@ -6,7 +6,7 @@ class Public::SessionsController < Devise::SessionsController
  #before_action :configure_permitted_parameters
 
   def after_sign_in_path_for(resource)
-    post_images_path
+     root_path
   end
   def after_sign_out_path_for(resource)
     about_path
@@ -20,7 +20,8 @@ class Public::SessionsController < Devise::SessionsController
   return if !@customer
   ## 【処理内容2】 取得したアカウントのパスワードと入力されたパスワードが一致してるかを判別
   if @customer.valid_password?(params[:customer][:password])
-  # GET /resource/sign_in
+  true && true == true 
+  redirect_to new_customer_session_path#GET /resource/sign_in
   end  # def new
  end #   super
  # end

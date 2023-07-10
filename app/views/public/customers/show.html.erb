@@ -2,14 +2,16 @@
 
   <h5 class = "ad_log_in">マイページ</h5>
   <h5><strong>登録情報</strong> </h5>
-  <%=  "編集する" %>
+  <%= link_to "編集する" ,edit_path(current_customer) , class: "btn btn-success"%>
 
 <h6>氏名</h6>
-<%= @customer.first_name%>
 <%= @customer.last_name%>
+<%= @customer.first_name%>
+
 <h6>カナ</h6>
-<%= @customer.first_name_kana%>
 <%= @customer.last_name_kana%>
+<%= @customer.first_name_kana%>
+
 <h6>郵便番号</h6>
 <%= @customer.postal_code%>
 
@@ -19,5 +21,7 @@
 <%= @customer.telephone_number%>
 <h6>メールアドレス</h6>
 <%= @customer.email%>
-   <h5><strong>注文履歴</strong> </h5>
-  <%=  "一覧を見る" %>
+<h5><strong>注文履歴</strong> </h5>
+  <%= link_to "一覧を見る",root_path  , class: "btn btn-primary" %>
+  
+ 
