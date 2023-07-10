@@ -1,0 +1,18 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<h5 class = "ad_log_in">商品登録</h5>
+<!-- form_with部分 -->
+<%= form_with model: @item, url: admin_items_path, method: :post do |f| %>
+ <h5>商品画像</h5>
+  <%= f.file_field :image, accept: "image/*" %>
+ <h5>商品名</h5>
+  <%= f.text_field :name %>
+   <h5>商品説明</h5>
+  <%= f.text_area :price %>
+ <h5>税抜価格</h5>
+  <%= f.text_field  :introduction%>円<br>
+
+
+  <%= f.submit '新規登録' ,class: "btn btn-success" %>
+<% end %>

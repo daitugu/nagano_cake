@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :cart_items, only: [:create, :index, :update, :destroy]
  end
   namespace :admin do
+   root to: 'homes#top'
   get "/admin/orders/:id" => "admin/orders#orders", as: "orders"
   resources :items, only: [:new, :create, :index, :show, :edit, :update]
   resources :customers, only: [:show, :edit, :update, :index]
