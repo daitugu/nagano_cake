@@ -1,0 +1,14 @@
+<%= form_with model: @item, url: admin_item_path, method: :post do |f| %>
+
+ <h5>商品画像</h5>
+  <%= f.file_field :image, accept: "image/*" %>
+ <h5>商品名</h5>
+  <%= f.text_field :name %>
+   <h5>商品説明</h5>
+  <%= f.text_area :introduction %>
+ <h5>税抜価格</h5>
+  <%= f.text_field  :price %>円<br>
+
+
+
+<% end %>
