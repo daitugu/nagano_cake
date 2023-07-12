@@ -1,2 +1,39 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<div class="container">
+<h5>会員情報編集</h5>
+ <div class="row">
+<%= form_with model: @customer,url: update_path(@customer.id)  do |f| %>
+  <h5>会員ID </h5>
+  <%= f.text_field :id %>
+  <h5>氏名 </h5>
+  <%= f.text_field :last_name %>
+  <%= f.text_field :first_name %>
+
+  <h5>フリガナ </h5>
+   <%= f.text_field :last_name_kana %>
+  <%= f.text_field :first_name_kana %>
+
+    <h5>郵便番号 </h5>
+  <%= f.text_field :postal_code %>
+      <h5>住所 </h5>
+  <%= f.text_field :address, class:"form-control"%>
+      <h5>電話番号 </h5>
+  <%= f.text_field :telephone_number%>
+      <h5>メールアドレス </h5>
+  <%= f.text_field :email%><br>
+  <div class="row">
+  <div class="done">
+  <label for="task_done">会員ステータス</label>
+  <div>
+    <input type="radio" value="true" name="task[done]" id="task_done_true">
+    <label for="task_done_true">有効</label>
+  </div>
+  <div>
+    <input type="radio" value="false" checked="checked" name="task[done]" id="task_done_false">
+    <label for="task_done_false">退会</label>
+  </div>
+</div>
+</div>
+</div>
+  <%= f.submit '編集内容を保存' , class: "btn btn-success" %>
+  <% end %>
+  
