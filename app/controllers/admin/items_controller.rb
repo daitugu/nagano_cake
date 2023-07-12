@@ -25,9 +25,9 @@ end
   def destroy
    @item = Item.find(params[:id]) # データ（レコード）を1件取得
     @item.destroy  # データ（レコード）を削除
-    redirect_to admin_items_path(@item.id)# 投稿一覧画面へリダイレクト  
+    redirect_to admin_items_path(@item.id)# 投稿一覧画面へリダイレクト
   end
-  
+
   def item_params
     params.require(:item).permit(:name, :introduction, :price, :image)
   end

@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
  <script src="https://kit.fontawesome.com/dd1b77aad7.js" crossorigin="anonymous"></script>
- 
+
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -28,12 +28,12 @@
       <%end%>
       </li>
       <li>
-        <%= link_to root_path,class: "nav-link text-light" do %>
+        <%= link_to items_path,class: "nav-link text-light" do %>
          商品一覧
       <%end%>
       </li>
       <li>
-        <%= link_to items_path, class: "nav-link text-light" do %>
+        <%= link_to cart_items_path, class: "nav-link text-light" do %>
          カート
       <%end%>
       </li>

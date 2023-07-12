@@ -1,0 +1,19 @@
+<%= form_with model: @item, url: item_path, method: :post do |f| %>
+<div class="container">
+<table cellpadding="5" border="0">
+  <tr>
+    <td><%= image_tag @item.image, size: "200x200" %></td>
+    <% end %>
+    <td><strong><%= @item.name %></strong><br>
+    <%= @item.introduction %></td>
+  </tr>
+  <tr>
+    
+  <td><strong>税抜価格</strong><br>
+  <%= @item.price %>円</td>
+   
+  </tr>
+
+  </tr>
+</table>
+

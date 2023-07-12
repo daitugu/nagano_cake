@@ -1,8 +1,6 @@
 <%= form_with model: @item, url: admin_item_path, method: :post do |f| %>
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
- 
+<div class="parent_box">
+
  <h5>商品画像</h5>
   <%= image_tag @item.image, size: "200x200" %>
  <h5>商品名</h5>
@@ -11,6 +9,7 @@
   <%= f.text_area :introduction %>
  <h5>税抜価格</h5>
   <%= f.text_field  :price %>円<br>
+
 
 <% end %>
 
