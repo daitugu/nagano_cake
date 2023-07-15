@@ -1,19 +1,20 @@
-<%= form_with model: @item, url: item_path, method: :post do |f| %>
+<%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
 <div class="container">
 <table cellpadding="5" border="0">
-  <tr>
+
+<%= f.hidden_field :item_id, :value => @item.id %>
+
     <td><%= image_tag @item.image, size: "200x200" %></td>
-    <% end %>
+
     <td><strong><%= @item.name %></strong><br>
     <%= @item.introduction %></td>
   </tr>
   <tr>
-    
-  <td><strong>税抜価格</strong><br>
-  <%= @item.price %>円</td>
-   
-  </tr>
 
+  <td><strong>税抜価格</strong><%= @item.price %>円</td>
+  <td><%= f.select :amount, *[1..10] %></td>
+  <td><%= f.submit "カートに入れる" %></td>
+  </tr>
   </tr>
 </table>
-
+    <% end %>
