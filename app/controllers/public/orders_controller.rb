@@ -1,8 +1,11 @@
 class Public::OrdersController < ApplicationController
   def show
+    
   end
 
   def new
+    @order  = Order.new
+    @customer = current_customer
   end
 
   def confirm
