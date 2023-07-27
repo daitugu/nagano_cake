@@ -1,3 +1,4 @@
+
 <div class="col-md-5 offset-md-3">
 <h5 class = "ad_log_in">
   <strong>注文情報入力</strong>
@@ -6,13 +7,11 @@
 <strong>支払方法</strong>
 </div>
 <div class="col-md-5 offset-md-3">
-<%= form_with model: @order do |f| %>
+<%= form_with url: confirm_path, model: @order do |f| %>
 <%= f.radio_button :payment_method, "credit_card" %>
 <%= f.label :payment_method_credit_card, "クレジットカード" %><br>
 <%= f.radio_button :payment_method, "transfer" %>
 <%= f.label :payment_method_transfer, "銀行振込" %><br>
-<% end %>
-</div>
 <div class="col-md-5 offset-md-3">
 <strong>お届け先</strong>
 </div>
@@ -22,6 +21,8 @@
 <%= @customer.last_name%>
 <%= @customer.first_name%>
 </div>
-<div class="col-md-5 offset-md-6">
-<%= link_to "編集画面へ進む", root_path  ,class: "btn btn-primary"%>
+<div class="col-md-5 offset-md-5">
+<%= f.submit "確認画面へ進む"  ,class: "btn btn-primary"%>
+</div>
+<% end %>
 </div>

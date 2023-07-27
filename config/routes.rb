@@ -11,12 +11,13 @@ Rails.application.routes.draw do
   get "/orders/complete" => "orders#complete", as: "complete"
   post "/orders/confirm" => "orders#confirm", as: "confirm"
   resources :items, only: [:show, :index]
-  resources :orders, only: [:show, :edit, :new, :index ]
+  resources :orders, only: [:show, :edit, :new, :index, :create]
   resources :cart_items, only: [:create, :index, :update, :destroy]
- end
+  end
+
   namespace :admin do
-   root to: 'orders#index'
-  get "/admin/orders/:id" => "admin/orders#orders", as: "orders"
+  root to: 'homes#top'
+  get "/orders/:id" => "orders#show", as: "orders"
   resources :items, only: [:new, :create, :index, :show, :edit, :update,]
   resources :customers, only: [:show, :edit, :update, :index]
 

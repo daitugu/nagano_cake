@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_11_085316) do
+ActiveRecord::Schema.define(version: 2023_07_25_124626) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2023_07_11_085316) do
     t.string "postal_code"
     t.string "address"
     t.integer "billing_amount"
-    t.string "payment_method"
+    t.integer "payment_method"
     t.text "name"
     t.integer "postage"
     t.datetime "created_at", precision: 6, null: false
