@@ -9,7 +9,7 @@ class Public::SessionsController < Devise::SessionsController
      root_path
   end
   def after_sign_out_path_for(resource)
-    about_path
+    root_path
   end
   protected
 # 退会しているかを判断するメソッド
@@ -20,7 +20,7 @@ class Public::SessionsController < Devise::SessionsController
   return if !@customer
   ## 【処理内容2】 取得したアカウントのパスワードと入力されたパスワードが一致してるかを判別
   if @customer.valid_password?(params[:customer][:password])
-  true && true == true 
+  true && true == true
   redirect_to new_customer_session_path#GET /resource/sign_in
   end  # def new
  end #   super

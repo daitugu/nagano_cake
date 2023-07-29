@@ -25,18 +25,16 @@
       <% @total = 0 %>
       <strong>請求情報 </strong>
       <table border="3">
-      <% @order_details.each do |order_detail| %>
-
       <tr>
-        <th>商品合計 <%= order_detail.purchase_price * order_detail.amount %>円</th>
+        <th> 商品合計 <%= @order.billing_amount-800  %>円</th>
       </tr>
       <tr>
         <th>送料 <%= "800"  %>円</th>
       </tr>
       <tr>
-        <th>請求金額 <%= order_detail.purchase_price * order_detail.amount + 800%>円</th>
+        <th>請求金額 <%= @order.billing_amount%>円</th>
       </tr>
-      <% end %>
+
       </table>
     </div>
   </div>
@@ -46,7 +44,7 @@
       <strong>注文内容</strong>
       <table  border="3">
         <thead>
-        
+
           <% @total = 0 %>
           <% @order_details.each do |order_detail| %>
            <tr>
@@ -67,7 +65,7 @@
            <th colspan="3"></th>
           </tr>
         </thead>
-        
+
       </table>
     </div>
     </div>
