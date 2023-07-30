@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 
 class Admin::SessionsController < Devise::SessionsController
+layout 'top'
   # before_action :configure_sign_in_params, only: [:create]
  #before_action :authenticate_admin!, except: [:top]
  #before_action :configure_permitted_parameters
 
   def after_sign_in_path_for(resource)
-    post_images_path
+    admin_root_path
   end
   def after_sign_out_path_for(resource)
-    about_path
+     new_admin_session_path
   end
   # GET /resource/sign_in
   # def new

@@ -13,7 +13,10 @@
 
   <td><strong>税抜価格</strong><%= @item.price %>円</td>
   <td><%= f.select :amount, *[1..10] %></td>
+       <% unless customer_signed_in? %>
+      <% else %>
   <td><%= f.submit "カートに入れる" %></td>
+        <% end %>
   </tr>
   </tr>
 </table>

@@ -22,7 +22,7 @@
 <h6>メールアドレス</h6>
 <%= @customer.email%><br>
 <h6>会員ステータス</h6>
-<td><% if @customer.is_deleted == true %><br>
+<td><% if @customer.is_deleted == false %><br>
 <p class = "text-success">有効</p>
 <%  else %>
 <p class ="text-secondary">退会</p>

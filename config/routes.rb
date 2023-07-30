@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/customers" => "customers#show", as: "show"
   get "/customers/introduction/edit" => "customers#edit", as: "edit"
   get "/customers/withdraw" => "customers#withdraw", as: "withdraw"
-  patch "/customers/leave" => "customers#leave"
+  patch "/customers/leave" => "customers#leave", as: "leave"
   patch "/customers" => "customers#update", as: "update"
   delete "/cart_items/all_destroy" => "cart_items#all_destroy", as: "all_destroy"
   get "/orders/complete" => "orders#complete", as: "complete"

@@ -8,7 +8,7 @@
 </div>
 <div class="col-md-5 offset-md-3">
 <%= form_with url: confirm_path, model: @order do |f| %>
-<%= f.radio_button :payment_method, "credit_card" %>
+<%= f.radio_button :payment_method, "credit_card" , checked: true%>
 <%= f.label :payment_method_credit_card, "クレジットカード" %><br>
 <%= f.radio_button :payment_method, "transfer" %>
 <%= f.label :payment_method_transfer, "銀行振込" %><br>

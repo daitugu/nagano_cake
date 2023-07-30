@@ -1,5 +1,5 @@
 <div class="col-md-5 offset-md-3">
-     <h5 class = "pb">注文情報確認</h5>
+     <h5 class = "pbl">注文情報確認</h5>
      <table class="table table-hover table-inverse">
   <thead>
     <tr>
@@ -23,17 +23,26 @@
       <% @total +=  (cart_item.item.price * 1.1).floor * cart_item.amount %>
       </tr>
       <% end %>
-   <table class="offset-md-5">
+       </tbody>
+   <table border="3" class="offset-md-8" >
+     
+  <tbody>
   <thead>
     <tr>
-       <th>送料<%= "800"  %>円</th>
-       <th>商品合計<%= @total %>円</th>
+       <th>送料 <%= "800"  %>円</th>
+    </tr>
+    <tr>
+       <th>商品合計 <%= @total %>円</th>
+    </tr>
+    <tr>
        <th>請求金額 <%= @total += 800  %>円</th>
+    </tr>
       </table>
+      
        <strong>支払方法<%= @order.payment_method_i18n %></strong><br>
        <strong>お届け先<%= @order.postal_code %><%= @order.address %></strong><br>
        <strong><%= @order.name %></strong>
-  </tbody>
+ </tbody>
       </div>
        <%= form_with model: @order do |f| %>
        <%= f.hidden_field :postal_code, :value => @order.postal_code %>
